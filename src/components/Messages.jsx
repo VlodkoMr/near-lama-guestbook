@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 
 export default function Messages({messages}) {
   return (
@@ -16,7 +17,7 @@ export default function Messages({messages}) {
               <div className="text">{message.text}</div>
 
               <div className="footer">
-                <span title="Block Height">#{message.timestamp}</span>
+                <span><Moment format="YYYY/MM/DD HH:mm">{message.timestamp / 1000000}</Moment></span>
                 <span>Rate: <b>{message.rate}</b></span>
               </div>
             </div>
